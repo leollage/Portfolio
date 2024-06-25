@@ -57,7 +57,7 @@ namespace API_Portfolio.Repositories
         }
         public async Task<Product> GetByNameAsync(string name)
         {
-            var query = $"SELECT * FROM Produtos WHERE Name = {name}";
+            var query = $"SELECT * FROM Produtos WHERE Nome = '{name}'";
 
             Product response;
             using (IDbConnection db = new SqlConnection(_connectionString))
@@ -77,10 +77,11 @@ namespace API_Portfolio.Repositories
         }
         public async Task<int> InsertAsync(Product product)
         {
-            var query = $"INSERT INTO Produtos output Inserted.ID VALUES ({product.Name}, " +
+            var query = $"INSERT INTO Produtos VALUES ('{product.Id}', " +
+                $"'{product.Nome}', " +
                 $"{product.MinimumInvestment}, " +
-                $"{product.Value}, " +
-                $"{product.Vencimento})";
+                $"{product.Valor}, " +
+                $"'{product.Vencimento}')";
             int response;
 
             using(IDbConnection db = new SqlConnection(_connectionString))
@@ -101,9 +102,9 @@ namespace API_Portfolio.Repositories
 
         public async Task<int> UpdateAsync(string id, Product product)
         {
-            var query = $"UPDATE Produtos SET Name = = '{product.Name}'," +
+            var query = $"UPDATE Produtos SET Nome = = '{product.Nome}'," +
                             $"MinimumInvestment = {product.MinimumInvestment}," +
-                            $" Value = {product.Value}," +
+                            $" Valor = {product.Valor}," +
                             $" Vencimento = {product.Vencimento}" +
                             $" WHERE id = {id}";
             int response;

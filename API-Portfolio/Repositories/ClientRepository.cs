@@ -56,7 +56,7 @@ namespace API_Portfolio.Repositories
         }
         public async Task<Client> GetByEmailAndPasswordAsync(string email, string password)
         {
-            var query = $"SELECT * FROM Clientes WHERE Email = {email} and Password = {password}";
+            var query = $"SELECT * FROM Clientes WHERE Email = {email} and Senha = {password}";
 
             Client response;
             using (IDbConnection db = new SqlConnection(_connectionString))
@@ -76,10 +76,10 @@ namespace API_Portfolio.Repositories
         }
         public async Task<int> InsertAsync(Client client)
         {
-            var query = $"INSERT INTO Clientes output Inserted.ID VALUES ({client.Name}, " +
+            var query = $"INSERT INTO Clientes output Inserted.ID VALUES ({client.Nome}, " +
                 $"{client.Email}, " +
-                $"{client.Password}, " +
-                $"{client.Age}), " +
+                $"{client.Senha}, " +
+                $"{client.Idade}), " +
                 $"{client.Products}";
             int response;
 
@@ -101,10 +101,10 @@ namespace API_Portfolio.Repositories
 
         public async Task<int> UpdateAsync(string id, Client client)
         {
-            var query = $"UPDATE Clientes SET Name = = '{client.Name}'," +
+            var query = $"UPDATE Clientes SET Nome = = '{client.Nome}'," +
                             $" Email = {client.Email}," +
-                            $" Password = {client.Password}," +
-                            $" Age = {client.Age}" +
+                            $" Senha = {client.Senha}," +
+                            $" Idade = {client.Idade}" +
                             $" Products = {client.Products}" +
                             $" WHERE id = {id}";
             int response;

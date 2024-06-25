@@ -62,7 +62,7 @@ namespace API_Portfolio.Controllers
         {
             try
             {
-                var checkIfProductsExistes = await _service.GetByNameAsync(product.Name);
+                var checkIfProductsExistes = await _service.GetByNameAsync(product.Nome);
 
                 if (checkIfProductsExistes is not null)
                     return BadRequest("Já existe um produto com esse nome cadastrado! ");
