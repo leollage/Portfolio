@@ -1,10 +1,10 @@
 1. Controller Products:
   Essa controller gerencia os produtos de investimento.
 - Funcionalidades:
-  Cadastro de Produto: Adiciona um novo produto ao portfólio.
-  Busca de Produto: Encontra um produto existente com base no critério ID.
-  Alteração de Produto: Atualiza informações de um produto com base no critério ID.
-  Exclusão de Produto: Remove um produto do portfólio com base no critério ID.
+- Cadastro de Produto: Adiciona um novo produto ao portfólio.
+- Busca de Produto: Encontra um produto existente com base no critério ID.
+- Alteração de Produto: Atualiza informações de um produto com base no critério ID.
+- Exclusão de Produto: Remove um produto do portfólio com base no critério ID.
 
 2. Controller Client:
   Essa controller lida com as operações relacionadas aos clientes.
