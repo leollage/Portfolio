@@ -13,6 +13,5 @@ namespace API_Portfolio.Model
         public string Senha { get; set; }
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public int Idade { get; set; }
-        public List<Product> Products { get; set; }
     }
 }

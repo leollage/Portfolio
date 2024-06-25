@@ -37,7 +37,7 @@ namespace API_Portfolio.Repositories
 
         public async Task<Product> GetByIdAsync(string id)
         {
-            var query = $"SELECT * FROM Produtos WHERE Id = {id}";
+            var query = $"SELECT * FROM Produtos WHERE Id = '{id}'";
 
             Product response;
             using (IDbConnection db = new SqlConnection(_connectionString))
@@ -102,11 +102,11 @@ namespace API_Portfolio.Repositories
 
         public async Task<int> UpdateAsync(string id, Product product)
         {
-            var query = $"UPDATE Produtos SET Nome = = '{product.Nome}'," +
-                            $"MinimumInvestment = {product.MinimumInvestment}," +
+            var query = $"UPDATE Produtos SET Nome = '{product.Nome}'," +
+                            $" MinimumInvestment = {product.MinimumInvestment}," +
                             $" Valor = {product.Valor}," +
-                            $" Vencimento = {product.Vencimento}" +
-                            $" WHERE id = {id}";
+                            $" Vencimento = '{product.Vencimento}'" +
+                            $" WHERE id = '{id}'";
             int response;
 
             using (IDbConnection db = new SqlConnection(_connectionString))
@@ -127,7 +127,7 @@ namespace API_Portfolio.Repositories
 
         public async Task<int> DeleteAsync(string id)
         {
-            var query = $"DELETE Produtos WHERE id = {id}";
+            var query = $"DELETE Produtos WHERE id = '{id}'";
             int response;
             using (IDbConnection db = new SqlConnection(_connectionString))
             {

@@ -18,6 +18,7 @@ builder.Services.AddScoped<IBusinessService, BusinessService>();
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>(x => new ProductRepository(builder.Configuration["ConnectionStrings:Portfolio"]));
 builder.Services.AddScoped<IClientRepository, ClientRepository>(x => new ClientRepository(builder.Configuration["ConnectionStrings:Portfolio"]));
+builder.Services.AddScoped<IBusinessRepository, BusinessRepository>(x => new BusinessRepository(builder.Configuration["ConnectionStrings:Portfolio"]));
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 var app = builder.Build();
 

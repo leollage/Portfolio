@@ -21,16 +21,11 @@ namespace API_Portfolio.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetInvestimentos(LoginDTO login)
+        public async Task<IActionResult> GetInvestimentos(string clientId)
         {
             try
             {
-                var authorizarion = await _authorizationService.ValidarLogin(login);
-
-                if (authorizarion is null)
-                    return BadRequest();
-
-                var produtos = _businessService.GetInvestimentos(authorizarion);
+                var produtos = await _businessService.GetInvestimentos(clientId);
                 return Ok(produtos);
             }
             catch (Exception ex)
