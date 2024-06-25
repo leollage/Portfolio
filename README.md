@@ -10,7 +10,7 @@
 2. Controller Client:
 - Essa controller lida com as operações relacionadas aos clientes.
 
-- Funcionalidades:
+ Funcionalidades:
 - Cadastro de Cliente: Permite adicionar um novo cliente ao sistema.
 - Busca de Cliente: Permite encontrar um cliente existente  com base no critério ID.
 - Alteração de Cliente: Permite atualizar informações de um cliente com base no critério ID.
@@ -20,7 +20,7 @@
 - Essa controller lida com as transações de negócios entre clientes e produtos.
 - Para acessar os endpoints da controller, é necessário ter um login de acesso previamente cadastrado no sistema por meio da controller “Client”.
   
-- Funcionalidades:
+ Funcionalidades:
 - Compra de Produto: Permite que um cliente compre um produto de investimento.
 - Venda de Produto: Registra a venda de um produto por um cliente.
 - Consulta de Produtos Comprados: Exibe os produtos que um cliente comprou.
